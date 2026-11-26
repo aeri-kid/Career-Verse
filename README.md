@@ -1,34 +1,40 @@
 # CareerVerse — *Discover. Explore. Plan.*
 
 > **Your future starts here.**  
+> **A future with purpose.**  
 > Explore meaningful careers and imagine how your strengths can help communities thrive.
 
-**CareerVerse** is a student-focused career exploration web application and interactive *Day-in-the-Life* simulator built for our hackathon. It helps students move past guesswork by matching their MBTI personality type with real-world careers, visualizing High School-to-Workspace pathways and regional salaries, comparing careers side by side with AI insights, and experiencing a realistic workday through branching scenarios.
+**CareerVerse** is a student-focused career exploration web application and interactive *Day-in-the-Life* simulator built for our hackathon. It helps students move past guesswork by matching their MBTI personality type with real-world careers, exploring education roadmaps and regional salary tiers with salary sorting directly inside Career Explorer, comparing two careers side by side with AI insights, and experiencing a realistic workday through branching scenarios.
 
 ---
 
 ## The Problem
+
 Students often choose academic tracks and future careers with little practical insight into what a day on the job actually feels like, how their personality fits the work, or what education and regional salary progression look like.
 
+---
+
 ## Core Features
-1. **MBTI Onboarding & Profile Dashboard:** Sign up or log in with an MBTI type (including a quick link for students who haven't taken an MBTI test yet) to unlock top career matches and a Career Compatibility score.
-2. **Career Explorer:** Browse curated careers across multiple fields with clear summaries and role highlights.
-3. **Day-in-the-Life Simulator:** Step into an interactive, scene-by-scene workday scenario with branching choices (5–7 scenes, 2–3 choices per scene).
-4. **Salary Explorer & Career Pathway:** View a structured **High School → University → Workspace** roadmap alongside Entry, Mid-level, and Senior/Lead salary tiers filtered by job and region.
-5. **AI Career Comparison:** Select two careers (`Career A` vs. `Career B`) to generate a tailored AI recommendation and side-by-side breakdown tailored to the student's MBTI profile.
+
+1. **MBTI Onboarding & Profile Dashboard:** Sign up or log in with an MBTI type (with a 16-types reference/test link for students who haven't taken an MBTI test yet) to enter the Dashboard showing `UserName Profile`, `MBTI`, `Your Top Match` cards, `Career Compatibility` percentage, and a `Start Simulation` shortcut.
+2. **Career Explorer (with Integrated Salary Tiers, Region Filter & Salary Sorting):** Browse curated careers across multiple fields with clear summaries, a **High School → University → Workspace** pathway roadmap (`High School` subjects, `University` degree & core skills, `Workspace` career progression), and **Entry**, **Mid-level**, and **Senior/Lead** salary cards. Includes job/region filtering and **sorting by career salary**.
+3. **Day-in-the-Life Simulator:** Pick a career from the job dropdown and step through an interactive workday scenario (5–7 scenes, 2–3 choices per scene).
+4. **AI Career Comparison:** Compare two careers (`CA` vs. `CB`) to generate an `AI Recommendation` alongside side-by-side comparison cards (`CA1` and `CA2`).
 
 ---
 
 ## Tech Stack & Budget Strategy
+
 Designed to stay within a **$0–$20 total hackathon budget**:
 * **Frontend & API Routes:** Next.js (App Router) + Tailwind CSS (hosted on **Vercel** Free Hobby Tier)
-* **Auth & Database:** **Supabase** Free Tier (Authentication + PostgreSQL storage + AI response caching)
-* **AI Layer:** Fast, low-cost LLM via server-side API routes with Supabase caching and deterministic JSON fallbacks
+* **Auth & Database:** **Supabase** Free Tier (Authentication + PostgreSQL storage + cached AI outputs)
+* **AI Layer:** Fast, low-cost LLM via server-side API routes with response caching in Supabase and deterministic JSON fallbacks
 * **Design:** Figma / Canva (Free Student Plans)
 
 ---
 
-## Project Structure 
+## Project Structure
+
 ```text
 careerverse/
 ├── app/
@@ -37,10 +43,9 @@ careerverse/
 │   ├── (dashboard)/
 │   │   ├── layout.tsx              # Shared sidebar + top bar (EN, Dark Mode, Profile)
 │   │   ├── page.tsx                # Dashboard (Profile, Top Matches, Compatibility, Simulator CTA)
-│   │   ├── explorer/page.tsx       # Career Explorer grid
+│   │   ├── explorer/page.tsx       # Career Explorer + High School->University->Workspace + Salary & Sorting
 │   │   ├── simulator/page.tsx      # Day-in-the-Life interactive scenario player
-│   │   ├── salary/page.tsx         # Salary Explorer & High School -> University -> Workspace roadmap
-│   │   ├── comparison/page.tsx     # Compare 2 Careers + AI Recommendation
+│   │   ├── comparison/page.tsx     # Compare 2 Careers + AI Recommendation (CA1 / CA2)
 │   │   └── settings/page.tsx       # Settings & MBTI editor
 │   └── api/
 │       ├── compare/route.ts        # AI Career Comparison endpoint (cached + fallback)
@@ -51,6 +56,8 @@ careerverse/
 ├── lib/
 │   ├── supabase.ts                 # Supabase client helpers
 │   └── ai.ts                       # LLM wrapper + prompt templates + schema validation
+├── AGENTS.md
+├── progress.md
 ├── README.md
 └── spec.md
 ```
@@ -60,6 +67,7 @@ careerverse/
 ## Quick Start
 
 ### 1. Clone & Install
+
 ```bash
 git clone <your-repo-url>
 cd careerverse
@@ -67,7 +75,9 @@ npm install
 ```
 
 ### 2. Configure Environment Variables
-Create a `.env.local` file in the root directory (never commit this file to GitHub):
+
+Copy `.env.example` to `.env.local` (never commit `.env.local` to GitHub):
+
 ```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
@@ -76,26 +86,16 @@ AI_API_KEY=your_llm_api_key
 ```
 
 ### 3. Run Locally
+
 ```bash
 npm run dev
 ```
+
 Open `http://localhost:3000` in your browser.
 
 ---
 
-## Hackathon Build Roadmap
-* **Phase 1 — Setup & Planning (10%):** Lock tech stack, create repo, deploy "Hello World" to Vercel, configure Supabase (`users`, `careers`, `ai_cache`), and agree on career JSON schema.
-* **Phase 2 — Core Build (50%):** Build Auth/MBTI onboarding, shared dashboard shell, Career Explorer, Salary & Pathway Explorer, and Career Comparison UI.
-* **Phase 3 — Day-in-the-Life Simulator (20%):** Hardcode one complete 5–7 scene career storyline first, then connect AI generation + Supabase caching.
-* **Phase 4 — Polish & Freeze (10%):** Feature freeze at 80% elapsed time. Focus on mobile responsiveness, loading states, dark mode, and deterministic API fallbacks.
-* **Phase 5 — Demo Prep (10%):** Rehearse the 3-minute live flow and record a backup video run.
+## Hackathon Build Plan & Demo Checklist
 
----
-
-## 3-Minute Demo Checklist
-1. **Hook & Problem:** Explain how students make major career decisions without real insight into daily work or pathways.
-2. **Onboarding:** Create/pick a student persona and select their **MBTI type**.
-3. **Dashboard & Compatibility:** Show top career matches and compatibility score.
-4. **Pathway & Comparison:** Compare two careers side by side with the **AI Recommendation** and inspect the **High School → University → Workspace** roadmap.
-5. **Play One Day:** Launch the **Day-in-the-Life Simulator** and play through a branching workday scenario.
-6. **Future Vision:** Highlight next steps (expanding career library, localized regional datasets, and a teacher/counselor dashboard).
+* **Time Allocation:** Setup & Planning (10%), Core Build (50%), Game / Day-in-the-Life (20%), Polish & Bug Fixing (10%), Demo Prep (10%) — with a **feature freeze at ~80%** of available time.
+* **3-Minute Demo Flow:** Pick a student and MBTI type → view top matches & compatibility → explore/sort careers by salary & check the pathway → compare two careers with AI → play a Day-in-the-Life scenario → share what to build next (more careers, more regions/countries, and a teacher/counselor dashboard), with a working fallback and backup screen recording ready.
