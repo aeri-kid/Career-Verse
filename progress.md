@@ -18,15 +18,17 @@
 - [x] Documented Google OAuth provider setup and handled OAuth errors returned in URL fragments
 - [x] Moved signup styles to a separate stylesheet and removed the custom schema SQL setup
 - [x] Added a signed-in Home dashboard, sidebar navigation for Career Explorer and Comparison, and a five-scene Day-in-the-Life popup game
+- [x] Connected Career Explorer and Home MBTI recommendations to the Supabase career, salary, country, and match tables
+- [x] Added a themed animated loading screen before authentication and an MBTI selector for users without a saved type
 
 ## In Progress
-- [ ] Finalizing tech stack, repo/Vercel deployment, Supabase tables (`users`, `careers`, plus cache tables), and shared career JSON schema
+- [ ] Verifying authenticated Supabase row visibility/RLS and seeding the career and MBTI match tables
 - [ ] Selecting 5–8 careers and splitting research across the team
 
 ## Next Up (In Order)
 1. Lock tech stack and deploy initial app to Vercel.
-2. Configure Supabase auth + `users` and `careers` tables and seed 5–8 careers.
-3. Build Auth/MBTI onboarding, Dashboard, Career Explorer (with pathway roadmap, region filter, salary tiers, and salary sorting), and Career Comparison UI.
+2. Verify read-only RLS access and seed Supabase career, salary, country, and MBTI match records.
+3. Continue expanding the initial Auth/MBTI onboarding, Dashboard, Career Explorer, and Career Comparison UI.
 4. Build Day-in-the-Life with one hardcoded 5–7 scene story (2–3 choices per scene), then connect `/api/compare` and `/api/simulate` with Supabase caching and fallbacks.
 5. Hit feature freeze at ~80% time; polish mobile layout, loading/error states, and dark mode; test on phone and venue Wi-Fi; record a backup demo video and rehearse the 3-minute demo.
 

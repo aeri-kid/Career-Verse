@@ -107,6 +107,12 @@ Enable the Email and Google providers in Supabase Auth. To enable Google signup:
 
 The **Continue with Google** buttons on both the signup and login views use Supabase OAuth. A successful authorization returns to CareerVerse; provider errors are shown in the app. If email confirmation is enabled, email/password signups are told to check their email after signup.
 
+## Career Explorer Data
+
+After Supabase restores the signed-in session, CareerVerse reads `careers`, `categories`, `career_salaries`, and `countries` for Career Explorer. The Home page maps the user's MBTI code from Supabase Auth metadata to `mbti_types`, then reads the top three ranked records from `mbti_career_matches`.
+
+The Home page lets Google-authenticated users choose and save an MBTI type to their Supabase Auth metadata. Configure read-only Row Level Security (`SELECT`) policies for the authenticated role on `careers`, `categories`, `career_salaries`, `countries`, `mbti_types`, and `mbti_career_matches`. The app does not use a service-role key or read the legacy `users.password_hash` column. If the authenticated queries return no visible rows, the UI explains that and shows clearly labeled sample career suggestions.
+
 ---
 
 ## Hackathon Build Plan & Demo Checklist
