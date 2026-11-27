@@ -12,6 +12,28 @@
 
 </head>
 <body>
+    <div class="loading-screen" id="loading-screen" role="status" aria-live="polite" aria-label="Preparing your CareerVerse">
+        <div class="loading-stage">
+            <div class="loading-orbit" aria-hidden="true">
+                <span class="loading-symbol" style="--index:0">🩺</span>
+                <span class="loading-symbol" style="--index:1">💻</span>
+                <span class="loading-symbol" style="--index:2">🧪</span>
+                <span class="loading-symbol" style="--index:3">🎨</span>
+                <span class="loading-symbol" style="--index:4">🚀</span>
+                <span class="loading-symbol" style="--index:5">⚖️</span>
+                <span class="loading-symbol" style="--index:6">🍳</span>
+                <span class="loading-symbol" style="--index:7">🔧</span>
+            </div>
+            <div class="loading-center">
+                <svg viewBox="0 0 128 128" aria-hidden="true">
+                    <circle class="loading-track" cx="64" cy="64" r="54"></circle>
+                    <circle class="loading-progress" cx="64" cy="64" r="54"></circle>
+                </svg>
+                <div class="loading-copy"><strong id="loading-percent">0%</strong><span>Mapping your future</span></div>
+            </div>
+        </div>
+    </div>
+
     <main class="shell">
         <section class="brand-panel" aria-label="CareerVerse introduction">
             <div class="brand">
@@ -195,6 +217,25 @@
                         <div class="journey-path"><span>High School</span><i></i><span>University</span><i></i><span>Workspace</span></div>
                     </div>
                 </div>
+                <section class="matches-section" aria-labelledby="matches-title">
+                    <div class="matches-header">
+                        <div>
+                            <p class="eyebrow">A PERSONALIZED START</p>
+                            <h2 id="matches-title">Your top 3 career matches</h2>
+                            <p id="matches-summary">Choose your MBTI type to see career suggestions.</p>
+                        </div>
+                        <div class="mbti-update">
+                            <label for="home-mbti">MBTI type</label>
+                            <select id="home-mbti" aria-label="Choose your MBTI type">
+                                <option value="">Select your type</option>
+                            </select>
+                            <button class="text-action" type="button" id="update-mbti">Update matches</button>
+                        </div>
+                    </div>
+                    <div class="match-cards" id="top-matches" aria-live="polite">
+                        <p class="match-state">Loading your career matches...</p>
+                    </div>
+                </section>
                 <div class="section-heading"><div><p class="eyebrow">A GOOD PLACE TO BEGIN</p><h2>Your career journey</h2></div></div>
                 <div class="home-cards">
                     <button class="feature-card" type="button" data-page-link="explorer"><span class="feature-icon sage" aria-hidden="true">⌕</span><span class="feature-copy"><strong>Explore careers</strong><small>Find roles that match your interests and strengths.</small><b>Browse careers →</b></span></button>
@@ -212,6 +253,7 @@
                     <label class="region-control">Region <select id="salary-region" aria-label="Salary region"><option value="United States">United States · USD</option><option value="Canada">Canada · CAD</option></select></label>
                     <label class="sort-control">Sort by <select id="salary-sort" aria-label="Sort careers"><option value="match">Best match</option><option value="salary">Highest senior salary</option><option value="name">Career name</option></select></label>
                 </div>
+                <p class="data-note" id="career-data-note" hidden></p>
                 <div class="career-grid" id="career-grid"></div>
                 <p class="empty-state" id="career-empty" hidden>No careers match that search. Try another keyword.</p>
             </section>
