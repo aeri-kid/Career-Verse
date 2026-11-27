@@ -150,6 +150,8 @@ body {
     width: min(100%, 520px);
 }
 
+.auth-view[hidden] { display: none; }
+
 .eyebrow {
     margin: 0 0 8px;
     color: var(--green);
@@ -271,8 +273,51 @@ input:focus, select:focus {
 
 .submit:disabled { cursor: wait; opacity: .72; transform: none; }
 
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 20px 0;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--line);
+}
+
+.google-button {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--card);
+    color: var(--ink);
+    font: 700 14px "DM Sans", sans-serif;
+    cursor: pointer;
+    transition: border-color .2s, background .2s, transform .18s;
+}
+
+.google-button:hover {
+    border-color: #b7c1af;
+    background: #fff;
+    transform: translateY(-1px);
+}
+
+.google-button:disabled { cursor: wait; opacity: .72; transform: none; }
+.google-button svg { width: 18px; height: 18px; flex: 0 0 auto; }
+
 .signin {
-    margin: 20px 0 0;
+    margin: 22px 0 0;
     text-align: center;
     color: var(--muted);
     font-size: 14px;
