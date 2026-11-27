@@ -99,7 +99,13 @@ Open `http://localhost:3000` in your browser.
 
 The signup form uses the Supabase project URL and public anon key configured in `app.js`. Supabase Auth stores the submitted name and MBTI as user metadata, so this flow does not need a custom database schema. Never put the service-role key in frontend code.
 
-Enable the Email provider in Supabase Auth. If email confirmation is enabled, the form tells new users to check their email after signup.
+Enable the Email and Google providers in Supabase Auth. To enable Google signup:
+
+1. In Google Cloud Console, create a Web OAuth client and add your Supabase project's callback URL (`https://<project-ref>.supabase.co/auth/v1/callback`) as an authorized redirect URI.
+2. In Supabase, open **Authentication → Providers → Google**, enable the provider, and enter the Google client ID and client secret.
+3. In **Authentication → URL Configuration**, set the Site URL and add the app's local and deployed URLs to the redirect URL allow list. The app redirects back to the current page after Google authorization.
+
+The **Continue with Google** buttons on both the signup and login views use Supabase OAuth. A successful authorization returns to CareerVerse; provider errors are shown in the app. If email confirmation is enabled, email/password signups are told to check their email after signup.
 
 ---
 

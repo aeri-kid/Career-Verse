@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f7f5ef">
-    <title>Welcome | CareerVerse</title>
+    <title>CareerVerse | Discover your future</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
@@ -153,6 +153,95 @@
             </div>
         </section>
     </main>
+
+    <main class="workspace" id="workspace" hidden>
+        <aside class="sidebar">
+            <a class="workspace-brand" href="#home" data-page-link="home">
+                <span class="brand-mark" aria-hidden="true">✦</span>
+                CareerVerse
+            </a>
+            <nav class="side-nav" aria-label="Main navigation">
+                <button class="nav-link active" type="button" data-page-link="home"><span aria-hidden="true">⌂</span> Home</button>
+                <button class="nav-link" type="button" data-page-link="explorer"><span aria-hidden="true">⌕</span> Career Explorer</button>
+                <button class="nav-link" type="button" data-open-game><span aria-hidden="true">◷</span> Day-in-the-Life</button>
+                <button class="nav-link" type="button" data-page-link="comparison"><span aria-hidden="true">⇄</span> Comparison</button>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="sidebar-profile">
+                    <span class="avatar" id="user-avatar">U</span>
+                    <span><strong id="sidebar-name">Your profile</strong><small id="sidebar-mbti">Career explorer</small></span>
+                </div>
+                <button class="nav-link logout-link" type="button" id="logout-button"><span aria-hidden="true">↪</span> Log Out</button>
+            </div>
+        </aside>
+
+        <section class="workspace-main">
+            <header class="topbar">
+                <span class="topbar-greeting" id="topbar-greeting">Your CareerVerse</span>
+                <div class="topbar-actions"><span class="language-tag">EN</span><button class="profile-shortcut" type="button" data-page-link="home" aria-label="Go to profile"><span class="avatar small" id="topbar-avatar">U</span></button></div>
+            </header>
+
+            <section class="page-view active" id="home-page" aria-labelledby="home-title">
+                <div class="welcome-banner">
+                    <div>
+                        <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+                        <h1 id="home-title">Discover a future<br>with purpose.</h1>
+                        <p>Explore your strengths, find careers that fit, and take your next step with confidence.</p>
+                        <button class="primary-action" type="button" data-page-link="explorer">Explore careers <span aria-hidden="true">→</span></button>
+                    </div>
+                    <div class="journey-card" aria-label="Your career journey">
+                        <span class="journey-sun" aria-hidden="true">✦</span>
+                        <p>YOUR JOURNEY</p>
+                        <div class="journey-path"><span>High School</span><i></i><span>University</span><i></i><span>Workspace</span></div>
+                    </div>
+                </div>
+                <div class="section-heading"><div><p class="eyebrow">A GOOD PLACE TO BEGIN</p><h2>Your career journey</h2></div></div>
+                <div class="home-cards">
+                    <button class="feature-card" type="button" data-page-link="explorer"><span class="feature-icon sage" aria-hidden="true">⌕</span><span class="feature-copy"><strong>Explore careers</strong><small>Find roles that match your interests and strengths.</small><b>Browse careers →</b></span></button>
+                    <button class="feature-card" type="button" data-open-game><span class="feature-icon peach" aria-hidden="true">◷</span><span class="feature-copy"><strong>Try a day on the job</strong><small>Make real-world choices in a career simulation.</small><b>Start a simulation →</b></span></button>
+                    <button class="feature-card" type="button" data-page-link="comparison"><span class="feature-icon yellow" aria-hidden="true">⇄</span><span class="feature-copy"><strong>Compare your options</strong><small>Put two careers side-by-side to see what fits.</small><b>Compare careers →</b></span></button>
+                </div>
+                <div class="profile-note"><span class="feature-icon sage" aria-hidden="true">✦</span><div><strong>Your profile</strong><p id="home-profile-copy">Your career interests will grow as you explore.</p></div><button class="text-action" type="button" data-page-link="explorer">Keep exploring →</button></div>
+            </section>
+
+            <section class="page-view" id="explorer-page" aria-labelledby="explorer-title" hidden>
+                <p class="eyebrow">FIND YOUR FIT</p><h1 id="explorer-title">Career Explorer</h1>
+                <p class="page-intro">Explore career paths, compare salary levels, and picture your next steps.</p>
+                <div class="explorer-controls">
+                    <label class="search-control"><span aria-hidden="true">⌕</span><input id="career-search" type="search" placeholder="Search careers" aria-label="Search careers"></label>
+                    <label class="region-control">Region <select id="salary-region" aria-label="Salary region"><option value="United States">United States · USD</option><option value="Canada">Canada · CAD</option></select></label>
+                    <label class="sort-control">Sort by <select id="salary-sort" aria-label="Sort careers"><option value="match">Best match</option><option value="salary">Highest senior salary</option><option value="name">Career name</option></select></label>
+                </div>
+                <div class="career-grid" id="career-grid"></div>
+                <p class="empty-state" id="career-empty" hidden>No careers match that search. Try another keyword.</p>
+            </section>
+
+            <section class="page-view" id="comparison-page" aria-labelledby="comparison-title" hidden>
+                <p class="eyebrow">MAKE AN INFORMED CHOICE</p><h1 id="comparison-title">Career Comparison</h1>
+                <p class="page-intro">Compare two paths and see how their work, learning, and salary can differ.</p>
+                <div class="comparison-controls">
+                    <label>Career one<select id="compare-one"></select></label>
+                    <span class="versus">VS</span>
+                    <label>Career two<select id="compare-two"></select></label>
+                    <button class="primary-action" id="compare-button" type="button">Compare careers <span aria-hidden="true">→</span></button>
+                </div>
+                <div class="comparison-results" id="comparison-results" aria-live="polite">
+                    <div class="comparison-placeholder"><span aria-hidden="true">⇄</span><strong>Your comparison will appear here</strong><p>Choose two careers above to see them side by side.</p></div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <dialog class="game-dialog" id="game-dialog" aria-labelledby="game-title">
+        <button class="dialog-close" type="button" data-close-game aria-label="Close simulation">×</button>
+        <div class="game-content" id="game-content">
+            <p class="eyebrow">DAY-IN-THE-LIFE SIMULATOR</p>
+            <h2 id="game-title">A day as a product designer</h2>
+            <div class="game-progress"><span id="game-progress-label">Scene 1 of 5</span><span class="progress-track"><i id="game-progress-bar"></i></span></div>
+            <div class="scene-card"><span class="scene-icon" aria-hidden="true">☀</span><h3 id="scene-title"></h3><p id="scene-description"></p></div>
+            <div class="game-choices" id="game-choices"></div>
+        </div>
+    </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
