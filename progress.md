@@ -20,6 +20,8 @@
 - [x] Added a signed-in Home dashboard, sidebar navigation for Career Explorer and Comparison, and a five-scene Day-in-the-Life popup game
 - [x] Connected Career Explorer and Home MBTI recommendations to the Supabase career, salary, country, and match tables
 - [x] Added a themed animated loading screen before authentication and an MBTI selector for users without a saved type
+- [x] Added English/Burmese language switching for the core interface and simulator; database-authored career text remains in its stored language
+- [x] Added editable profile name and MBTI settings, retained Google’s name as the initial profile name, and displayed the top three matches on Home and Profile
 
 ## In Progress
 - [ ] Verifying authenticated Supabase row visibility/RLS and seeding the career and MBTI match tables

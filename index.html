@@ -7,12 +7,12 @@
     <title>CareerVerse | Discover your future</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
-    <div class="loading-screen" id="loading-screen" role="status" aria-live="polite" aria-label="Preparing your CareerVerse">
+    <div class="loading-screen" id="loading-screen" role="status" aria-live="polite" aria-label="Preparing your CareerVerse" data-i18n-aria="Preparing your CareerVerse">
         <div class="loading-stage">
             <div class="loading-orbit" aria-hidden="true">
                 <span class="loading-symbol" style="--index:0">🩺</span>
@@ -29,13 +29,13 @@
                     <circle class="loading-track" cx="64" cy="64" r="54"></circle>
                     <circle class="loading-progress" cx="64" cy="64" r="54"></circle>
                 </svg>
-                <div class="loading-copy"><strong id="loading-percent">0%</strong><span>Mapping your future</span></div>
+                <div class="loading-copy"><strong id="loading-percent">0%</strong><span data-i18n="Mapping your future">Mapping your future</span></div>
             </div>
         </div>
     </div>
 
     <main class="shell">
-        <section class="brand-panel" aria-label="CareerVerse introduction">
+        <section class="brand-panel" aria-label="CareerVerse introduction" data-i18n-aria="CareerVerse introduction">
             <div class="brand">
                 <span class="brand-mark" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none">
@@ -49,41 +49,48 @@
             </div>
 
             <div class="story">
-                <h2>Discover a future<br>with purpose.</h2>
-                <p>Explore careers that match your strengths and turn your curiosity into a clear path forward.</p>
+                <h2><span data-i18n="Discover a future">Discover a future</span><br><span data-i18n="with purpose.">with purpose.</span></h2>
+                <p data-i18n="Explore careers that match your strengths and turn your curiosity into a clear path forward.">Explore careers that match your strengths and turn your curiosity into a clear path forward.</p>
             </div>
 
-            <div class="path" aria-label="Career journey">
-                <span>HS</span><i></i><span>Uni</span><i></i><span>Work</span>
+            <div class="path" aria-label="Career journey" data-i18n-aria="Career journey">
+                <span data-i18n="HS">HS</span><i></i><span data-i18n="Uni">Uni</span><i></i><span data-i18n="Work">Work</span>
             </div>
         </section>
 
         <section class="form-panel">
+            <div class="auth-language-switch">
+                <label class="sr-only" for="auth-language" data-i18n="Language">Language</label>
+                <select class="language-select" id="auth-language" data-language-selector aria-label="Language" data-i18n-aria="Language">
+                    <option value="en">EN</option>
+                    <option value="my">မြန်မာ</option>
+                </select>
+            </div>
             <div class="form-wrap">
                 <div class="auth-view" id="signup-view">
-                    <p class="eyebrow">Student account</p>
-                    <h1>Create your account</h1>
-                    <p class="subtitle">A few details will help us personalize your journey.</p>
+                    <p class="eyebrow" data-i18n="Student account">Student account</p>
+                    <h1 data-i18n="Create your account">Create your account</h1>
+                    <p class="subtitle" data-i18n="A few details will help us personalize your journey.">A few details will help us personalize your journey.</p>
 
                     <form id="signup-form">
                         <div class="form-grid">
                             <div class="field">
-                                <label for="first-name">First name</label>
-                                <input id="first-name" name="firstName" type="text" placeholder="Alex" autocomplete="given-name" required>
+                                <label for="first-name" data-i18n="First name">First name</label>
+                                <input id="first-name" name="firstName" type="text" placeholder="Alex" data-i18n-placeholder="Alex" autocomplete="given-name" required>
                             </div>
                             <div class="field">
-                                <label for="last-name">Last name</label>
-                                <input id="last-name" name="lastName" type="text" placeholder="Morgan" autocomplete="family-name" required>
+                                <label for="last-name" data-i18n="Last name">Last name</label>
+                                <input id="last-name" name="lastName" type="text" placeholder="Morgan" data-i18n-placeholder="Morgan" autocomplete="family-name" required>
                             </div>
                             <div class="field full">
-                                <label for="signup-email">Email address</label>
+                                <label for="signup-email" data-i18n="Email address">Email address</label>
                                 <input id="signup-email" name="email" type="email" placeholder="alex@example.com" autocomplete="email" required>
                             </div>
                             <div class="field full">
-                                <label for="signup-password">Password</label>
+                                <label for="signup-password" data-i18n="Password">Password</label>
                                 <div class="password-field">
-                                    <input id="signup-password" name="password" type="password" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" required>
-                                    <button class="toggle-password" type="button" aria-label="Show password" aria-pressed="false" data-password-toggle="signup-password">
+                                    <input id="signup-password" name="password" type="password" placeholder="At least 8 characters" data-i18n-placeholder="At least 8 characters" minlength="8" autocomplete="new-password" required>
+                                    <button class="toggle-password" type="button" aria-label="Show password" data-i18n-aria="Show password" aria-pressed="false" data-password-toggle="signup-password">
                                         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                             <path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z" stroke="currentColor" stroke-width="1.7"/>
                                             <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.7"/>
@@ -92,10 +99,10 @@
                                 </div>
                             </div>
                             <div class="field full">
-                                <label for="mbti">MBTI personality type</label>
+                                <label for="mbti" data-i18n="MBTI personality type">MBTI personality type</label>
                                 <div class="mbti-row">
                                     <select id="mbti" name="mbti" required>
-                                        <option value="" selected disabled>Select your type</option>
+                                        <option value="" selected disabled data-i18n="Select your type">Select your type</option>
                                         <option value="INTJ">INTJ - Architect</option>
                                         <option value="INTP">INTP - Logician</option>
                                         <option value="ENTJ">ENTJ - Commander</option>
@@ -113,14 +120,14 @@
                                         <option value="ESTP">ESTP - Entrepreneur</option>
                                         <option value="ESFP">ESFP - Entertainer</option>
                                     </select>
-                                    <a class="info-link" href="https://www.16personalities.com/" target="_blank" rel="noopener noreferrer">I haven't taken it yet</a>
+                                    <a class="info-link" href="https://www.16personalities.com/" target="_blank" rel="noopener noreferrer" data-i18n="I haven't taken it yet">I haven't taken it yet</a>
                                 </div>
                             </div>
                         </div>
-                        <button class="submit" type="submit">Create account <span aria-hidden="true">→</span></button>
+                        <button class="submit" type="submit" data-i18n="Create account">Create account <span aria-hidden="true">→</span></button>
                     </form>
 
-                    <div class="auth-divider"><span>or continue with</span></div>
+                    <div class="auth-divider"><span data-i18n="or continue with">or continue with</span></div>
                     <button class="google-button" type="button" data-google-signin>
                         <svg viewBox="0 0 48 48" aria-hidden="true">
                             <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z"/>
@@ -128,27 +135,27 @@
                             <path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.75-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.55 2.56 10.78l7.97-6.19Z"/>
                             <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.14 1.45-4.89 2.3-8.18 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z"/>
                         </svg>
-                        Continue with Google
+                        <span data-i18n="Continue with Google">Continue with Google</span>
                     </button>
-                    <p class="signin">Already have an account? <a href="#login" data-auth-switch="login">Log in</a></p>
+                    <p class="signin"><span data-i18n="Already have an account?">Already have an account?</span> <a href="#login" data-auth-switch="login" data-i18n="Log in">Log in</a></p>
                 </div>
 
                 <div class="auth-view" id="login-view" hidden>
-                    <p class="eyebrow">Welcome back</p>
-                    <h1>Log in to CareerVerse</h1>
-                    <p class="subtitle">Pick up where your career journey left off.</p>
+                    <p class="eyebrow" data-i18n="Welcome back">Welcome back</p>
+                    <h1 data-i18n="Log in to CareerVerse">Log in to CareerVerse</h1>
+                    <p class="subtitle" data-i18n="Pick up where your career journey left off.">Pick up where your career journey left off.</p>
 
                     <form id="login-form">
                         <div class="form-grid">
                             <div class="field full">
-                                <label for="login-email">Email address</label>
+                                <label for="login-email" data-i18n="Email address">Email address</label>
                                 <input id="login-email" name="email" type="email" placeholder="alex@example.com" autocomplete="email" required>
                             </div>
                             <div class="field full">
-                                <label for="login-password">Password</label>
+                                <label for="login-password" data-i18n="Password">Password</label>
                                 <div class="password-field">
-                                    <input id="login-password" name="password" type="password" placeholder="Your password" autocomplete="current-password" required>
-                                    <button class="toggle-password" type="button" aria-label="Show password" aria-pressed="false" data-password-toggle="login-password">
+                                    <input id="login-password" name="password" type="password" placeholder="Your password" data-i18n-placeholder="Your password" autocomplete="current-password" required>
+                                    <button class="toggle-password" type="button" aria-label="Show password" data-i18n-aria="Show password" aria-pressed="false" data-password-toggle="login-password">
                                         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                             <path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z" stroke="currentColor" stroke-width="1.7"/>
                                             <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.7"/>
@@ -157,10 +164,10 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="submit" type="submit">Log in <span aria-hidden="true">→</span></button>
+                        <button class="submit" type="submit" data-i18n="Log in">Log in <span aria-hidden="true">→</span></button>
                     </form>
 
-                    <div class="auth-divider"><span>or continue with</span></div>
+                    <div class="auth-divider"><span data-i18n="or continue with">or continue with</span></div>
                     <button class="google-button" type="button" data-google-signin>
                         <svg viewBox="0 0 48 48" aria-hidden="true">
                             <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z"/>
@@ -168,9 +175,9 @@
                             <path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.75-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.55 2.56 10.78l7.97-6.19Z"/>
                             <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.14 1.45-4.89 2.3-8.18 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z"/>
                         </svg>
-                        Continue with Google
+                        <span data-i18n="Continue with Google">Continue with Google</span>
                     </button>
-                    <p class="signin">New to CareerVerse? <a href="#signup" data-auth-switch="signup">Create an account</a></p>
+                    <p class="signin"><span data-i18n="New to CareerVerse?">New to CareerVerse?</span> <a href="#signup" data-auth-switch="signup" data-i18n="Create an account">Create an account</a></p>
                 </div>
             </div>
         </section>
@@ -182,103 +189,136 @@
                 <span class="brand-mark" aria-hidden="true">✦</span>
                 CareerVerse
             </a>
-            <nav class="side-nav" aria-label="Main navigation">
-                <button class="nav-link active" type="button" data-page-link="home"><span aria-hidden="true">⌂</span> Home</button>
-                <button class="nav-link" type="button" data-page-link="explorer"><span aria-hidden="true">⌕</span> Career Explorer</button>
-                <button class="nav-link" type="button" data-open-game><span aria-hidden="true">◷</span> Day-in-the-Life</button>
-                <button class="nav-link" type="button" data-page-link="comparison"><span aria-hidden="true">⇄</span> Comparison</button>
+            <nav class="side-nav" aria-label="Main navigation" data-i18n-aria="Main navigation">
+                <button class="nav-link active" type="button" data-page-link="home" data-i18n="Home"><span aria-hidden="true">⌂</span> Home</button>
+                <button class="nav-link" type="button" data-page-link="explorer" data-i18n="Career Explorer"><span aria-hidden="true">⌕</span> Career Explorer</button>
+                <button class="nav-link" type="button" data-open-game data-i18n="Day-in-the-Life"><span aria-hidden="true">◷</span> Day-in-the-Life</button>
+                <button class="nav-link" type="button" data-page-link="comparison" data-i18n="Comparison"><span aria-hidden="true">⇄</span> Comparison</button>
+                <button class="nav-link" type="button" data-page-link="profile" data-i18n="Profile"><span aria-hidden="true">◉</span> Profile</button>
             </nav>
             <div class="sidebar-bottom">
                 <div class="sidebar-profile">
                     <span class="avatar" id="user-avatar">U</span>
                     <span><strong id="sidebar-name">Your profile</strong><small id="sidebar-mbti">Career explorer</small></span>
                 </div>
-                <button class="nav-link logout-link" type="button" id="logout-button"><span aria-hidden="true">↪</span> Log Out</button>
+                <button class="nav-link logout-link" type="button" id="logout-button" data-i18n="Log Out"><span aria-hidden="true">↪</span> Log Out</button>
             </div>
         </aside>
 
         <section class="workspace-main">
             <header class="topbar">
                 <span class="topbar-greeting" id="topbar-greeting">Your CareerVerse</span>
-                <div class="topbar-actions"><span class="language-tag">EN</span><button class="profile-shortcut" type="button" data-page-link="home" aria-label="Go to profile"><span class="avatar small" id="topbar-avatar">U</span></button></div>
+                <div class="topbar-actions">
+                    <label class="sr-only" for="workspace-language" data-i18n="Language">Language</label>
+                    <select class="language-select" id="workspace-language" data-language-selector aria-label="Language" data-i18n-aria="Language">
+                        <option value="en">EN</option>
+                        <option value="my">မြန်မာ</option>
+                    </select>
+                    <button class="profile-shortcut" type="button" data-page-link="profile" aria-label="Go to profile" data-i18n-aria="Go to profile"><span class="avatar small" id="topbar-avatar">U</span></button>
+                </div>
             </header>
 
             <section class="page-view active" id="home-page" aria-labelledby="home-title">
                 <div class="welcome-banner">
                     <div>
-                        <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
-                        <h1 id="home-title">Discover a future<br>with purpose.</h1>
-                        <p>Explore your strengths, find careers that fit, and take your next step with confidence.</p>
-                        <button class="primary-action" type="button" data-page-link="explorer">Explore careers <span aria-hidden="true">→</span></button>
+                        <p class="eyebrow" data-i18n="YOUR NEXT CHAPTER STARTS HERE">YOUR NEXT CHAPTER STARTS HERE</p>
+                        <h1 id="home-title"><span data-i18n="Discover a future">Discover a future</span><br><span data-i18n="with purpose.">with purpose.</span></h1>
+                        <p data-i18n="Explore your strengths, find careers that fit, and take your next step with confidence.">Explore your strengths, find careers that fit, and take your next step with confidence.</p>
+                        <button class="primary-action" type="button" data-page-link="explorer" data-i18n="Explore careers">Explore careers <span aria-hidden="true">→</span></button>
                     </div>
-                    <div class="journey-card" aria-label="Your career journey">
-                        <span class="journey-sun" aria-hidden="true">✦</span>
-                        <p>YOUR JOURNEY</p>
-                        <div class="journey-path"><span>High School</span><i></i><span>University</span><i></i><span>Workspace</span></div>
+                    <div class="home-profile-panel" aria-label="Your profile and top career matches" data-i18n-aria="Your profile and top career matches">
+                        <div class="home-profile-header">
+                            <span class="avatar home-profile-avatar" id="home-profile-avatar">U</span>
+                            <div class="home-profile-identity">
+                                <p data-i18n="YOUR PROFILE">YOUR PROFILE</p>
+                                <strong id="home-profile-name">Your profile</strong>
+                                <small id="home-profile-mbti">MBTI not set</small>
+                            </div>
+                            <button class="profile-edit-link" type="button" data-page-link="profile" data-i18n="Edit profile">Edit profile</button>
+                        </div>
+                        <div class="home-top-careers-heading">
+                            <strong data-i18n="Your 3 most compatible careers">Your 3 most compatible careers</strong>
+                            <span aria-hidden="true">✦</span>
+                        </div>
+                        <p class="home-match-summary" id="home-match-summary">Choose your MBTI type to see career suggestions.</p>
+                        <ol class="home-top-careers" id="home-top-careers" aria-live="polite">
+                            <li data-i18n="Loading your career matches...">Loading your career matches...</li>
+                        </ol>
                     </div>
                 </div>
-                <section class="matches-section" aria-labelledby="matches-title">
+                <div class="section-heading"><div><p class="eyebrow" data-i18n="A GOOD PLACE TO BEGIN">A GOOD PLACE TO BEGIN</p><h2 data-i18n="Explore your options">Explore your options</h2></div></div>
+                <div class="home-cards">
+                    <button class="feature-card" type="button" data-page-link="explorer"><span class="feature-icon sage" aria-hidden="true">⌕</span><span class="feature-copy"><strong data-i18n="Explore careers">Explore careers</strong><small data-i18n="Find roles that match your interests and strengths.">Find roles that match your interests and strengths.</small><b data-i18n="Browse careers →">Browse careers →</b></span></button>
+                    <button class="feature-card" type="button" data-open-game><span class="feature-icon peach" aria-hidden="true">◷</span><span class="feature-copy"><strong data-i18n="Try a day on the job">Try a day on the job</strong><small data-i18n="Make real-world choices in a career simulation.">Make real-world choices in a career simulation.</small><b data-i18n="Start a simulation →">Start a simulation →</b></span></button>
+                    <button class="feature-card" type="button" data-page-link="comparison"><span class="feature-icon yellow" aria-hidden="true">⇄</span><span class="feature-copy"><strong data-i18n="Compare your options">Compare your options</strong><small data-i18n="Put two careers side-by-side to see what fits.">Put two careers side-by-side to see what fits.</small><b data-i18n="Compare careers →">Compare careers →</b></span></button>
+                </div>
+            </section>
+
+            <section class="page-view" id="profile-page" aria-labelledby="profile-title" hidden>
+                <p class="eyebrow" data-i18n="YOUR PROFILE">YOUR PROFILE</p>
+                <h1 id="profile-title" data-i18n="Profile">Profile</h1>
+                <p class="page-intro" data-i18n="Update your profile name and MBTI type to refresh your career matches.">Update your profile name and MBTI type to refresh your career matches.</p>
+                <form class="profile-form" id="profile-form">
+                    <div class="field">
+                        <label for="profile-name" data-i18n="Profile name">Profile name</label>
+                        <input id="profile-name" name="displayName" type="text" maxlength="80" autocomplete="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="profile-mbti" data-i18n="MBTI type">MBTI type</label>
+                        <select id="profile-mbti" name="mbti" aria-label="Choose your MBTI type" data-i18n-aria="Choose your MBTI type">
+                            <option value="" selected data-i18n="Select your type">Select your type</option>
+                        </select>
+                    </div>
+                    <button class="primary-action profile-save" type="submit" data-i18n="Save profile">Save profile <span aria-hidden="true">→</span></button>
+                </form>
+                <section class="matches-section profile-matches" aria-labelledby="matches-title">
                     <div class="matches-header">
                         <div>
-                            <p class="eyebrow">A PERSONALIZED START</p>
-                            <h2 id="matches-title">Your top 3 career matches</h2>
+                            <p class="eyebrow" data-i18n="A PERSONALIZED START">A PERSONALIZED START</p>
+                            <h2 id="matches-title" data-i18n="Your 3 most compatible careers">Your 3 most compatible careers</h2>
                             <p id="matches-summary">Choose your MBTI type to see career suggestions.</p>
-                        </div>
-                        <div class="mbti-update">
-                            <label for="home-mbti">MBTI type</label>
-                            <select id="home-mbti" aria-label="Choose your MBTI type">
-                                <option value="">Select your type</option>
-                            </select>
-                            <button class="text-action" type="button" id="update-mbti">Update matches</button>
                         </div>
                     </div>
                     <div class="match-cards" id="top-matches" aria-live="polite">
-                        <p class="match-state">Loading your career matches...</p>
+                        <p class="match-state" data-i18n="Loading your career matches...">Loading your career matches...</p>
                     </div>
                 </section>
-                <div class="section-heading"><div><p class="eyebrow">A GOOD PLACE TO BEGIN</p><h2>Your career journey</h2></div></div>
-                <div class="home-cards">
-                    <button class="feature-card" type="button" data-page-link="explorer"><span class="feature-icon sage" aria-hidden="true">⌕</span><span class="feature-copy"><strong>Explore careers</strong><small>Find roles that match your interests and strengths.</small><b>Browse careers →</b></span></button>
-                    <button class="feature-card" type="button" data-open-game><span class="feature-icon peach" aria-hidden="true">◷</span><span class="feature-copy"><strong>Try a day on the job</strong><small>Make real-world choices in a career simulation.</small><b>Start a simulation →</b></span></button>
-                    <button class="feature-card" type="button" data-page-link="comparison"><span class="feature-icon yellow" aria-hidden="true">⇄</span><span class="feature-copy"><strong>Compare your options</strong><small>Put two careers side-by-side to see what fits.</small><b>Compare careers →</b></span></button>
-                </div>
-                <div class="profile-note"><span class="feature-icon sage" aria-hidden="true">✦</span><div><strong>Your profile</strong><p id="home-profile-copy">Your career interests will grow as you explore.</p></div><button class="text-action" type="button" data-page-link="explorer">Keep exploring →</button></div>
             </section>
 
             <section class="page-view" id="explorer-page" aria-labelledby="explorer-title" hidden>
-                <p class="eyebrow">FIND YOUR FIT</p><h1 id="explorer-title">Career Explorer</h1>
-                <p class="page-intro">Explore career paths, compare salary levels, and picture your next steps.</p>
+                <p class="eyebrow" data-i18n="FIND YOUR FIT">FIND YOUR FIT</p><h1 id="explorer-title" data-i18n="Career Explorer">Career Explorer</h1>
+                <p class="page-intro" data-i18n="Explore career paths, compare salary levels, and picture your next steps.">Explore career paths, compare salary levels, and picture your next steps.</p>
                 <div class="explorer-controls">
-                    <label class="search-control"><span aria-hidden="true">⌕</span><input id="career-search" type="search" placeholder="Search careers" aria-label="Search careers"></label>
-                    <label class="region-control">Region <select id="salary-region" aria-label="Salary region"><option value="United States">United States · USD</option><option value="Canada">Canada · CAD</option></select></label>
-                    <label class="sort-control">Sort by <select id="salary-sort" aria-label="Sort careers"><option value="match">Best match</option><option value="salary">Highest senior salary</option><option value="name">Career name</option></select></label>
+                    <label class="search-control"><span aria-hidden="true">⌕</span><input id="career-search" type="search" placeholder="Search careers" data-i18n-placeholder="Search careers" aria-label="Search careers" data-i18n-aria="Search careers"></label>
+                    <label class="region-control" data-i18n="Region">Region <select id="salary-region" aria-label="Salary region" data-i18n-aria="Salary region"><option value="United States">United States · USD</option><option value="Canada">Canada · CAD</option></select></label>
+                    <label class="sort-control" data-i18n="Sort by">Sort by <select id="salary-sort" aria-label="Sort careers" data-i18n-aria="Sort careers"><option value="match" data-i18n="Best match">Best match</option><option value="salary" data-i18n="Highest senior salary">Highest senior salary</option><option value="name" data-i18n="Career name">Career name</option></select></label>
                 </div>
                 <p class="data-note" id="career-data-note" hidden></p>
                 <div class="career-grid" id="career-grid"></div>
-                <p class="empty-state" id="career-empty" hidden>No careers match that search. Try another keyword.</p>
+                <p class="empty-state" id="career-empty" hidden data-i18n="No careers match that search. Try another keyword.">No careers match that search. Try another keyword.</p>
             </section>
 
             <section class="page-view" id="comparison-page" aria-labelledby="comparison-title" hidden>
-                <p class="eyebrow">MAKE AN INFORMED CHOICE</p><h1 id="comparison-title">Career Comparison</h1>
-                <p class="page-intro">Compare two paths and see how their work, learning, and salary can differ.</p>
+                <p class="eyebrow" data-i18n="MAKE AN INFORMED CHOICE">MAKE AN INFORMED CHOICE</p><h1 id="comparison-title" data-i18n="Career Comparison">Career Comparison</h1>
+                <p class="page-intro" data-i18n="Compare two paths and see how their work, learning, and salary can differ.">Compare two paths and see how their work, learning, and salary can differ.</p>
                 <div class="comparison-controls">
-                    <label>Career one<select id="compare-one"></select></label>
+                    <label data-i18n="Career one">Career one<select id="compare-one"></select></label>
                     <span class="versus">VS</span>
-                    <label>Career two<select id="compare-two"></select></label>
-                    <button class="primary-action" id="compare-button" type="button">Compare careers <span aria-hidden="true">→</span></button>
+                    <label data-i18n="Career two">Career two<select id="compare-two"></select></label>
+                    <button class="primary-action" id="compare-button" type="button" data-i18n="Compare careers">Compare careers <span aria-hidden="true">→</span></button>
                 </div>
                 <div class="comparison-results" id="comparison-results" aria-live="polite">
-                    <div class="comparison-placeholder"><span aria-hidden="true">⇄</span><strong>Your comparison will appear here</strong><p>Choose two careers above to see them side by side.</p></div>
+                    <div class="comparison-placeholder"><span aria-hidden="true">⇄</span><strong data-i18n="Your comparison will appear here">Your comparison will appear here</strong><p data-i18n="Choose two careers above to see them side by side.">Choose two careers above to see them side by side.</p></div>
                 </div>
             </section>
         </section>
     </main>
 
     <dialog class="game-dialog" id="game-dialog" aria-labelledby="game-title">
-        <button class="dialog-close" type="button" data-close-game aria-label="Close simulation">×</button>
+        <button class="dialog-close" type="button" data-close-game aria-label="Close simulation" data-i18n-aria="Close simulation">×</button>
         <div class="game-content" id="game-content">
-            <p class="eyebrow">DAY-IN-THE-LIFE SIMULATOR</p>
-            <h2 id="game-title">A day as a product designer</h2>
+            <p class="eyebrow" data-i18n="DAY-IN-THE-LIFE SIMULATOR">DAY-IN-THE-LIFE SIMULATOR</p>
+            <h2 id="game-title" data-i18n="A day as a product designer">A day as a product designer</h2>
             <div class="game-progress"><span id="game-progress-label">Scene 1 of 5</span><span class="progress-track"><i id="game-progress-bar"></i></span></div>
             <div class="scene-card"><span class="scene-icon" aria-hidden="true">☀</span><h3 id="scene-title"></h3><p id="scene-description"></p></div>
             <div class="game-choices" id="game-choices"></div>
