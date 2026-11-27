@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f7f5ef">
-    <title>Create Account | CareerVerse</title>
+    <title>Welcome | CareerVerse</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
@@ -38,71 +38,124 @@
 
         <section class="form-panel">
             <div class="form-wrap">
-                <p class="eyebrow">Student account</p>
-                <h1>Create your account</h1>
-                <p class="subtitle">A few details will help us personalize your journey.</p>
+                <div class="auth-view" id="signup-view">
+                    <p class="eyebrow">Student account</p>
+                    <h1>Create your account</h1>
+                    <p class="subtitle">A few details will help us personalize your journey.</p>
 
-                <form id="signup-form">
-                    <div class="form-grid">
-                        <div class="field">
-                            <label for="first-name">First name</label>
-                            <input id="first-name" name="firstName" type="text" placeholder="Alex" autocomplete="given-name" required>
-                        </div>
-                        <div class="field">
-                            <label for="last-name">Last name</label>
-                            <input id="last-name" name="lastName" type="text" placeholder="Morgan" autocomplete="family-name" required>
-                        </div>
-                        <div class="field full">
-                            <label for="email">Email address</label>
-                            <input id="email" name="email" type="email" placeholder="alex@example.com" autocomplete="email" required>
-                        </div>
-                        <div class="field full">
-                            <label for="password">Password</label>
-                            <div class="password-field">
-                                <input id="password" name="password" type="password" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" required>
-                                <button class="toggle-password" type="button" aria-label="Show password" aria-pressed="false">
-                                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                        <path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z" stroke="currentColor" stroke-width="1.7"/>
-                                        <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.7"/>
-                                    </svg>
-                                </button>
+                    <form id="signup-form">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="first-name">First name</label>
+                                <input id="first-name" name="firstName" type="text" placeholder="Alex" autocomplete="given-name" required>
+                            </div>
+                            <div class="field">
+                                <label for="last-name">Last name</label>
+                                <input id="last-name" name="lastName" type="text" placeholder="Morgan" autocomplete="family-name" required>
+                            </div>
+                            <div class="field full">
+                                <label for="signup-email">Email address</label>
+                                <input id="signup-email" name="email" type="email" placeholder="alex@example.com" autocomplete="email" required>
+                            </div>
+                            <div class="field full">
+                                <label for="signup-password">Password</label>
+                                <div class="password-field">
+                                    <input id="signup-password" name="password" type="password" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" required>
+                                    <button class="toggle-password" type="button" aria-label="Show password" aria-pressed="false" data-password-toggle="signup-password">
+                                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                            <path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z" stroke="currentColor" stroke-width="1.7"/>
+                                            <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.7"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="field full">
+                                <label for="mbti">MBTI personality type</label>
+                                <div class="mbti-row">
+                                    <select id="mbti" name="mbti" required>
+                                        <option value="" selected disabled>Select your type</option>
+                                        <option value="INTJ">INTJ - Architect</option>
+                                        <option value="INTP">INTP - Logician</option>
+                                        <option value="ENTJ">ENTJ - Commander</option>
+                                        <option value="ENTP">ENTP - Debater</option>
+                                        <option value="INFJ">INFJ - Advocate</option>
+                                        <option value="INFP">INFP - Mediator</option>
+                                        <option value="ENFJ">ENFJ - Protagonist</option>
+                                        <option value="ENFP">ENFP - Campaigner</option>
+                                        <option value="ISTJ">ISTJ - Logistician</option>
+                                        <option value="ISFJ">ISFJ - Defender</option>
+                                        <option value="ESTJ">ESTJ - Executive</option>
+                                        <option value="ESFJ">ESFJ - Consul</option>
+                                        <option value="ISTP">ISTP - Virtuoso</option>
+                                        <option value="ISFP">ISFP - Adventurer</option>
+                                        <option value="ESTP">ESTP - Entrepreneur</option>
+                                        <option value="ESFP">ESFP - Entertainer</option>
+                                    </select>
+                                    <a class="info-link" href="https://www.16personalities.com/" target="_blank" rel="noopener noreferrer">I haven't taken it yet</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="field full">
-                            <label for="mbti">MBTI personality type</label>
-                            <div class="mbti-row">
-                                <select id="mbti" name="mbti" required>
-                                    <option value="" selected disabled>Select your type</option>
-                                    <option value="INTJ">INTJ - Architect</option>
-                                    <option value="INTP">INTP - Logician</option>
-                                    <option value="ENTJ">ENTJ - Commander</option>
-                                    <option value="ENTP">ENTP - Debater</option>
-                                    <option value="INFJ">INFJ - Advocate</option>
-                                    <option value="INFP">INFP - Mediator</option>
-                                    <option value="ENFJ">ENFJ - Protagonist</option>
-                                    <option value="ENFP">ENFP - Campaigner</option>
-                                    <option value="ISTJ">ISTJ - Logistician</option>
-                                    <option value="ISFJ">ISFJ - Defender</option>
-                                    <option value="ESTJ">ESTJ - Executive</option>
-                                    <option value="ESFJ">ESFJ - Consul</option>
-                                    <option value="ISTP">ISTP - Virtuoso</option>
-                                    <option value="ISFP">ISFP - Adventurer</option>
-                                    <option value="ESTP">ESTP - Entrepreneur</option>
-                                    <option value="ESFP">ESFP - Entertainer</option>
-                                </select>
-                                <a class="info-link" href="https://www.16personalities.com/" target="_blank" rel="noopener noreferrer">I haven't taken it yet</a>
+                        <button class="submit" type="submit">Create account <span aria-hidden="true">→</span></button>
+                    </form>
+
+                    <div class="auth-divider"><span>or continue with</span></div>
+                    <button class="google-button" type="button" data-google-signin>
+                        <svg viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z"/>
+                            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.75 7.18l7.73 6C44.43 37.93 46.98 31.7 46.98 24.55Z"/>
+                            <path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.75-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.55 2.56 10.78l7.97-6.19Z"/>
+                            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.14 1.45-4.89 2.3-8.18 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z"/>
+                        </svg>
+                        Continue with Google
+                    </button>
+                    <p class="signin">Already have an account? <a href="#login" data-auth-switch="login">Log in</a></p>
+                </div>
+
+                <div class="auth-view" id="login-view" hidden>
+                    <p class="eyebrow">Welcome back</p>
+                    <h1>Log in to CareerVerse</h1>
+                    <p class="subtitle">Pick up where your career journey left off.</p>
+
+                    <form id="login-form">
+                        <div class="form-grid">
+                            <div class="field full">
+                                <label for="login-email">Email address</label>
+                                <input id="login-email" name="email" type="email" placeholder="alex@example.com" autocomplete="email" required>
+                            </div>
+                            <div class="field full">
+                                <label for="login-password">Password</label>
+                                <div class="password-field">
+                                    <input id="login-password" name="password" type="password" placeholder="Your password" autocomplete="current-password" required>
+                                    <button class="toggle-password" type="button" aria-label="Show password" aria-pressed="false" data-password-toggle="login-password">
+                                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                            <path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z" stroke="currentColor" stroke-width="1.7"/>
+                                            <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.7"/>
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <button class="submit" type="submit">Enter Dashboard <span aria-hidden="true">→</span></button>
-                </form>
+                        <button class="submit" type="submit">Log in <span aria-hidden="true">→</span></button>
+                    </form>
 
-                <p class="signin">Already have an account? <a href="#" id="login-link">Log in</a></p>
+                    <div class="auth-divider"><span>or continue with</span></div>
+                    <button class="google-button" type="button" data-google-signin>
+                        <svg viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z"/>
+                            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.75 7.18l7.73 6C44.43 37.93 46.98 31.7 46.98 24.55Z"/>
+                            <path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.75-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.55 2.56 10.78l7.97-6.19Z"/>
+                            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.14 1.45-4.89 2.3-8.18 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z"/>
+                        </svg>
+                        Continue with Google
+                    </button>
+                    <p class="signin">New to CareerVerse? <a href="#signup" data-auth-switch="signup">Create an account</a></p>
+                </div>
             </div>
         </section>
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
