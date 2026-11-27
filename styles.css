@@ -24,6 +24,16 @@ body {
         linear-gradient(135deg, #faf8f2 0%, #f2f3ea 100%);
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
 .loading-screen {
     position: fixed;
     inset: 0;
@@ -240,10 +250,30 @@ body {
 }
 
 .form-panel {
+    position: relative;
     display: grid;
     place-items: center;
     padding: 48px clamp(28px, 7vw, 96px);
     background: rgba(255,254,250,.72);
+}
+
+.auth-language-switch {
+    position: absolute;
+    top: 22px;
+    right: clamp(20px, 4vw, 48px);
+}
+
+.language-select {
+    width: auto;
+    min-width: 76px;
+    height: 36px;
+    margin: 0;
+    padding: 0 11px;
+    border-radius: 10px;
+    color: #60675b;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .form-wrap {
@@ -590,8 +620,7 @@ input:focus, select:focus {
     font-weight: 600;
 }
 
-.topbar-actions { display: flex; align-items: center; gap: 16px; }
-.language-tag { color: #6d7268; font-size: 12px; font-weight: 700; }
+.topbar-actions { display: flex; align-items: center; gap: 12px; }
 
 .profile-shortcut {
     padding: 0;
@@ -639,23 +668,41 @@ input:focus, select:focus {
 
 .primary-action:hover { transform: translateY(-1px); background: var(--green-dark); }
 
-.journey-card {
-    position: relative;
-    min-height: 178px;
+.home-profile-panel {
+    min-width: 0;
+    min-height: 220px;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    gap: 12px;
-    padding: 24px;
+    gap: 17px;
+    padding: 20px;
     border: 1px solid rgba(81,111,66,.12);
     border-radius: 18px;
-    background: rgba(255,254,250,.72);
+    background: rgba(255,254,250,.82);
 }
 
-.journey-card > p { margin: 0; color: #74816d; font-size: 10px; font-weight: 800; letter-spacing: 1.4px; }
-.journey-sun { position: absolute; top: 17px; right: 23px; color: #c6a952; font-size: 32px; }
-.journey-path { display: flex; align-items: center; gap: 8px; color: #56644e; font-size: 10px; font-weight: 700; }
-.journey-path i { height: 1px; min-width: 10px; flex: 1; background: #cdd7c5; }
+.home-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.home-profile-avatar { width: 43px; height: 43px; font-size: 14px; }
+.home-profile-identity { display: grid; min-width: 0; flex: 1; gap: 3px; }
+.home-profile-identity p { margin: 0; color: #74816d; font-size: 9px; font-weight: 800; letter-spacing: 1px; }
+.home-profile-identity strong { overflow: hidden; color: #343a30; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.home-profile-identity small { color: #778071; font-size: 10px; }
+.profile-edit-link { padding: 5px 0; border: 0; background: transparent; color: var(--green); font: 700 11px "DM Sans", sans-serif; cursor: pointer; }
+.profile-edit-link:hover, .home-match-career:hover { text-decoration: underline; }
+
+.home-top-careers-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #4f594a; font-size: 12px; }
+.home-top-careers-heading > span { color: #b59c4e; }
+.home-match-summary { margin: -12px 0 -7px; color: #7a7f75; font-size: 10px; line-height: 1.4; }
+.home-top-careers { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.home-top-careers li { min-width: 0; display: grid; grid-template-columns: 25px minmax(0, 1fr); align-items: center; gap: 8px; }
+.home-match-rank { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: #eaf0e4; color: var(--green-dark); font-size: 9px; font-weight: 800; }
+.home-match-career { overflow: hidden; padding: 0; border: 0; background: transparent; color: #424a3d; font: 700 11px "DM Sans", sans-serif; text-align: left; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
+.home-top-careers .home-match-empty { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #777b72; font-size: 11px; }
+.home-top-careers .home-match-empty .text-action { flex: 0 0 auto; }
 
 .matches-section {
     margin-top: 32px;
@@ -676,18 +723,6 @@ input:focus, select:focus {
 .matches-header .eyebrow { margin-bottom: 5px; }
 .matches-header h2 { margin: 0; font: 800 22px "Manrope", sans-serif; letter-spacing: -.6px; }
 .matches-header > div:first-child > p:last-child { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
-
-.mbti-update {
-    min-width: 205px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: end;
-    gap: 6px 8px;
-}
-
-.mbti-update label { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 11px; }
-.mbti-update select { height: 38px; min-width: 0; padding: 0 9px; font-size: 12px; }
-.mbti-update .text-action { white-space: nowrap; }
 
 .match-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 
@@ -741,22 +776,26 @@ input:focus, select:focus {
 .feature-copy small { color: #777b72; font-size: 12px; line-height: 1.5; }
 .feature-copy b { margin-top: 4px; color: var(--green); font-size: 12px; }
 
-.profile-note {
-    display: flex;
-    align-items: center;
+.text-action { padding: 5px 0; border: 0; background: transparent; color: var(--green); font: 700 12px "DM Sans", sans-serif; cursor: pointer; }
+.text-action:hover { text-decoration: underline; }
+
+.profile-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    align-items: end;
     gap: 14px;
-    margin-top: 18px;
-    padding: 17px 19px;
-    border: 1px solid #e7e8e1;
-    border-radius: 15px;
+    padding: 22px;
+    border: 1px solid #e6e8df;
+    border-radius: 17px;
     background: #fffefa;
 }
 
-.profile-note > div { flex: 1; }
-.profile-note strong { font-size: 13px; }
-.profile-note p { margin: 4px 0 0; color: #777b72; font-size: 12px; }
-.text-action { padding: 5px 0; border: 0; background: transparent; color: var(--green); font: 700 12px "DM Sans", sans-serif; cursor: pointer; }
-.text-action:hover { text-decoration: underline; }
+.profile-form .field { min-width: 0; }
+.profile-form label { margin-bottom: 7px; color: #666d61; }
+.profile-form input, .profile-form select { height: 46px; }
+.profile-save { min-height: 46px; white-space: nowrap; }
+.profile-matches { margin-top: 22px; }
+.profile-matches .matches-header { margin-bottom: 17px; }
 
 .page-intro { margin: 10px 0 25px; color: var(--muted); line-height: 1.6; }
 .explorer-controls { display: flex; align-items: end; gap: 13px; margin-bottom: 20px; }
@@ -872,17 +911,15 @@ input:focus, select:focus {
     .page-view { padding-top: 25px; }
     .welcome-banner { grid-template-columns: 1fr; gap: 15px; padding: 25px 20px; }
     .welcome-banner h1 { font-size: 33px; }
-    .journey-card { min-height: 125px; padding: 17px; }
-    .journey-path { gap: 5px; font-size: 9px; }
+    .home-profile-panel { min-height: 0; padding: 17px; }
     .home-cards, .career-grid, .comparison-results { grid-template-columns: 1fr; }
     .matches-section { padding: 17px; }
     .matches-header { flex-direction: column; }
     .matches-header h2 { font-size: 20px; }
-    .mbti-update { width: 100%; }
     .match-cards { grid-template-columns: 1fr; }
     .feature-card { min-height: 155px; }
-    .profile-note { align-items: flex-start; flex-wrap: wrap; }
-    .profile-note .text-action { margin-left: 54px; }
+    .profile-form { grid-template-columns: 1fr; gap: 14px; padding: 17px; }
+    .profile-save { justify-self: start; }
     .explorer-controls { align-items: stretch; flex-direction: column; }
     .region-control, .sort-control { min-width: 0; }
     .salary-tiers { gap: 4px; padding: 11px 7px; }
@@ -900,4 +937,21 @@ input:focus, select:focus {
     .loading-orbit, .loading-progress { animation: none; }
     .loading-progress { stroke-dashoffset: 0; }
     .loading-symbol { transform: rotate(calc(var(--index) * 45deg)) translateY(-122px) scale(1); animation: none; }
+}
+
+html[lang="my"] body,
+html[lang="my"] button,
+html[lang="my"] input,
+html[lang="my"] select {
+    font-family: "Noto Sans Myanmar", "DM Sans", sans-serif;
+    letter-spacing: normal;
+}
+
+html[lang="my"] h1,
+html[lang="my"] h2,
+html[lang="my"] h3,
+html[lang="my"] .brand,
+html[lang="my"] .workspace-brand {
+    font-family: "Noto Sans Myanmar", "Manrope", sans-serif;
+    letter-spacing: normal;
 }
