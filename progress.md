@@ -12,6 +12,9 @@
 - [x] Defined CareerVerse concept, tagline, and $0–$20 hackathon budget strategy
 - [x] Created wireframes for Sign In/Log In, Dashboard, Day-in-the-Life Simulator, Career Explorer/Pathway/Salary, and Career Comparison
 - [x] Updated spec so salary tiers, region filter, and salary sorting live directly inside Career Explorer
+- [x] Built the responsive student Sign Up / MBTI onboarding form
+- [x] Connected signup to Supabase Auth using the project URL and public anon key
+- [x] Moved signup styles to a separate stylesheet and removed the custom schema SQL setup
 
 ## In Progress
 - [ ] Finalizing tech stack, repo/Vercel deployment, Supabase tables (`users`, `careers`, plus cache tables), and shared career JSON schema
