@@ -3,11 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Verse</title>
+    <meta name="theme-color" content="#f7f5ef">
+    <title>Create Account | CareerVerse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>Welcome to Career Verse 🚀</p>
-    
+    <main class="shell">
+        <section class="brand-panel" aria-label="CareerVerse introduction">
+            <div class="brand">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 21C12 14 16 9 21 6" stroke="#516F42" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M12 21C12 13 8 8 3 6" stroke="#516F42" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M12 21V3" stroke="#516F42" stroke-width="1.8" stroke-linecap="round"/>
+                        <circle cx="12" cy="3" r="2" fill="#516F42"/>
+                    </svg>
+                </span>
+                CareerVerse
+            </div>
+
+            <div class="story">
+                <h2>Discover a future<br>with purpose.</h2>
+                <p>Explore careers that match your strengths and turn your curiosity into a clear path forward.</p>
+            </div>
+
+            <div class="path" aria-label="Career journey">
+                <span>HS</span><i></i><span>Uni</span><i></i><span>Work</span>
+            </div>
+        </section>
+
+        <section class="form-panel">
+            <div class="form-wrap">
+                <p class="eyebrow">Student account</p>
+                <h1>Create your account</h1>
+                <p class="subtitle">A few details will help us personalize your journey.</p>
+
+                <form id="signup-form">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="first-name">First name</label>
+                            <input id="first-name" name="firstName" type="text" placeholder="Alex" autocomplete="given-name" required>
+                        </div>
+                        <div class="field">
+                            <label for="last-name">Last name</label>
+                            <input id="last-name" name="lastName" type="text" placeholder="Morgan" autocomplete="family-name" required>
+                        </div>
+                        <div class="field full">
+                            <label for="email">Email address</label>
+                            <input id="email" name="email" type="email" placeholder="alex@example.com" autocomplete="email" required>
+                        </div>
+                        <div class="field full">
+                            <label for="password">Password</label>
+                            <div class="password-field">
+                                <input id="password" name="password" type="password" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" required>
+                                <button class="toggle-password" type="button" aria-label="Show password" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z" stroke="currentColor" stroke-width="1.7"/>
+                                        <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.7"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="field full">
+                            <label for="mbti">MBTI personality type</label>
+                            <div class="mbti-row">
+                                <select id="mbti" name="mbti" required>
+                                    <option value="" selected disabled>Select your type</option>
+                                    <option value="INTJ">INTJ - Architect</option>
+                                    <option value="INTP">INTP - Logician</option>
+                                    <option value="ENTJ">ENTJ - Commander</option>
+                                    <option value="ENTP">ENTP - Debater</option>
+                                    <option value="INFJ">INFJ - Advocate</option>
+                                    <option value="INFP">INFP - Mediator</option>
+                                    <option value="ENFJ">ENFJ - Protagonist</option>
+                                    <option value="ENFP">ENFP - Campaigner</option>
+                                    <option value="ISTJ">ISTJ - Logistician</option>
+                                    <option value="ISFJ">ISFJ - Defender</option>
+                                    <option value="ESTJ">ESTJ - Executive</option>
+                                    <option value="ESFJ">ESFJ - Consul</option>
+                                    <option value="ISTP">ISTP - Virtuoso</option>
+                                    <option value="ISFP">ISFP - Adventurer</option>
+                                    <option value="ESTP">ESTP - Entrepreneur</option>
+                                    <option value="ESFP">ESFP - Entertainer</option>
+                                </select>
+                                <a class="info-link" href="https://www.16personalities.com/" target="_blank" rel="noopener noreferrer">I haven't taken it yet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="submit" type="submit">Enter Dashboard <span aria-hidden="true">→</span></button>
+                </form>
+
+                <p class="signin">Already have an account? <a href="#" id="login-link">Log in</a></p>
+            </div>
+        </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
 </body>
 </html>
