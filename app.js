@@ -148,7 +148,11 @@ document.querySelectorAll("[data-google-signin]").forEach((button) => {
 });
 
 const authCallbackParams = new URLSearchParams(window.location.search);
-const authError = authCallbackParams.get("error_description") || authCallbackParams.get("error");
+const authHashParams = new URLSearchParams(window.location.hash.slice(1));
+const authError = authCallbackParams.get("error_description")
+    || authCallbackParams.get("error")
+    || authHashParams.get("error_description")
+    || authHashParams.get("error");
 if (authError) {
     showToast(authError, true);
 } else if (supabaseClient && (authCallbackParams.has("code") || window.location.hash.includes("access_token="))) {

@@ -15,6 +15,7 @@
 - [x] Built the responsive student Sign Up / MBTI onboarding form
 - [x] Connected signup to Supabase Auth using the project URL and public anon key
 - [x] Added email/password login and Google OAuth sign-in using Supabase Auth
+- [x] Documented Google OAuth provider setup and handled OAuth errors returned in URL fragments
 - [x] Moved signup styles to a separate stylesheet and removed the custom schema SQL setup
 
 ## In Progress
