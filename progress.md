@@ -17,6 +17,7 @@
 - [x] Added email/password login and Google OAuth sign-in using Supabase Auth
 - [x] Documented Google OAuth provider setup and handled OAuth errors returned in URL fragments
 - [x] Moved signup styles to a separate stylesheet and removed the custom schema SQL setup
+- [x] Added a signed-in Home dashboard, sidebar navigation for Career Explorer and Comparison, and a five-scene Day-in-the-Life popup game
 
 ## In Progress
 - [ ] Finalizing tech stack, repo/Vercel deployment, Supabase tables (`users`, `careers`, plus cache tables), and shared career JSON schema
