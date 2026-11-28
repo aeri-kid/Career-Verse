@@ -8,6 +8,7 @@
 - **Build only what is requested** for the current feature/screen. Do not add unrequested libraries or over-engineer.
 - **No standalone Salary page:** Salary tiers (`Entry`, `Mid-level`, `Senior/Lead`), region filtering, and **sorting by career salary** belong inside **Career Explorer**, alongside the `High School -> University -> Workspace` pathway roadmap.
 - **Show MMK Rate for each country on top right corner right below the sort, in the career explorer**
+- **Inside the career explorer, when a salary is hovered, it must show the salary times MMK rate value, of the salary in myanmar kyats**
 - **Shared Navigation & Top Bar:**
   - Sidebar: `Home`, `Career Explorer`, `Day-in-the-Life`, `Comparison`, plus `Settings & MBTI`, `Log Out`, `Help` (and optional mascot/picture area).
   - Top bar: Language selector (`EN` default), Dark mode toggle, and Profile shortcut.
@@ -16,6 +17,8 @@
   - Career Explorer (job/region filter, salary sorting, High School -> University -> Workspace roadmap, Entry/Mid-level/Senior-Lead salary cards).
   - Day-in-the-Life Simulator (job dropdown, 5–7 scenes, 2–3 choices per scene).
   - Career Comparison (`CA` vs `CB`, `Compare` action, `AI Recommendation`, and `CA1` / `CA2` cards).
+  - Ask for Country
+  - Add AI Integration in Comparison Tab for Comparing two careers for same country or different countries
 
 ## Security, AI & Reliability Rules
 - Never expose secret keys (`AI_API_KEY`, `SUPABASE_SERVICE_ROLE_KEY`) in client code.
