@@ -1,15 +1,49 @@
 :root {
-    --ink: #20231f;
-    --muted: #73776f;
-    --line: #dedfd8;
-    --paper: #f7f5ef;
-    --card: #fffefa;
-    --green: #516f42;
-    --green-dark: #405938;
-    --green-soft: #edf2e8;
-    --sage: #b9c5aa;
-    --peach: #eac5a6;
-    --yellow: #e5cf85;
+    --primary: #7C3AED;
+    --primary-hover: #6D28D9;
+    --primary-light: #E9D5FF;
+    --primary-soft: #F3E8FF;
+    --background: #FFFFFF;
+    --surface: #F8FAFC;
+    --card: #FFFFFF;
+    --border: #E5E7EB;
+    --text-primary: #1F1F1F;
+    --text-secondary: #6B7280;
+    --text-tertiary: #9CA3AF;
+    --disabled-text: #D1D5DB;
+    --success: #22C55E;
+    --warning: #FBBF24;
+    --error: #EF4444;
+    --info: #3B82F6;
+    --purple-gradient: linear-gradient(135deg, #7C3AED, #A78BFA);
+    --soft-gradient: linear-gradient(135deg, #E9D5FF, #C4B5FD);
+
+    --ink: var(--text-primary);
+    --muted: var(--text-secondary);
+    --line: var(--border);
+    --paper: var(--background);
+    --green: var(--primary);
+    --green-dark: var(--primary-hover);
+    --green-soft: var(--primary-soft);
+    --sage: #C4B5FD;
+    --peach: #DDD6FE;
+    --yellow: #FBBF24;
+}
+
+html[data-theme="dark"] {
+    --primary: #A78BFA;
+    --primary-hover: #8B5CF6;
+    --primary-light: #6D28D9;
+    --primary-soft: #4C1D95;
+    --background: #0B0B16;
+    --surface: #111827;
+    --card: #1F2937;
+    --border: #374151;
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-tertiary: #9CA3AF;
+    --disabled-text: #6B7280;
+    color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -18,10 +52,10 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: "DM Sans", sans-serif;
-    color: var(--ink);
+    color: var(--text-primary);
     background:
-        radial-gradient(circle at 14% 18%, rgba(185,197,170,.35), transparent 22rem),
-        linear-gradient(135deg, #faf8f2 0%, #f2f3ea 100%);
+        radial-gradient(circle at 14% 18%, rgba(124,58,237,.10), transparent 22rem),
+        linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
 }
 
 .sr-only {
@@ -148,7 +182,7 @@ body {
     justify-content: space-between;
     min-height: 100vh;
     padding: 44px 52px;
-    background: #dfe6d5;
+    background: var(--soft-gradient);
 }
 
 .brand-panel::before,
@@ -799,6 +833,19 @@ input:focus, select:focus {
 
 .page-intro { margin: 10px 0 25px; color: var(--muted); line-height: 1.6; }
 .explorer-controls { display: flex; align-items: end; gap: 13px; margin-bottom: 20px; }
+.explorer-controls { position: relative; }
+.mmk-rate {
+    width: fit-content;
+    margin: -12px 0 18px auto;
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--card);
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 700;
+}
+.salary-tiers strong[title] { cursor: help; }
 .explorer-controls label, .comparison-controls label { display: grid; gap: 7px; color: #666d61; font-size: 12px; font-weight: 700; }
 .explorer-controls select, .comparison-controls select { height: 46px; }
 .search-control { position: relative; flex: 1; }
@@ -954,4 +1001,170 @@ html[lang="my"] .brand,
 html[lang="my"] .workspace-brand {
     font-family: "Noto Sans Myanmar", "Manrope", sans-serif;
     letter-spacing: normal;
+}
+
+.theme-toggle {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary);
+    background: var(--primary-soft);
+}
+
+.theme-toggle-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+html[data-theme="dark"] .workspace,
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .form-panel,
+html[data-theme="dark"] .brand-panel,
+html[data-theme="dark"] .matches-section,
+html[data-theme="dark"] .match-card,
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .profile-form,
+html[data-theme="dark"] .career-card,
+html[data-theme="dark"] .comparison-card,
+html[data-theme="dark"] .comparison-controls,
+html[data-theme="dark"] .game-dialog,
+html[data-theme="dark"] .google-button,
+html[data-theme="dark"] .home-profile-panel,
+html[data-theme="dark"] .game-choice {
+    background: var(--card);
+}
+
+html[data-theme="dark"] .workspace { background: var(--background); }
+html[data-theme="dark"] .form-panel { background: var(--surface); }
+html[data-theme="dark"] .brand-panel { background: linear-gradient(135deg, #1F2937, #4C1D95); }
+
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .topbar,
+html[data-theme="dark"] .sidebar-profile,
+html[data-theme="dark"] .career-path,
+html[data-theme="dark"] .comparison-detail,
+html[data-theme="dark"] .game-choice,
+html[data-theme="dark"] .matches-section,
+html[data-theme="dark"] .match-card,
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .profile-form,
+html[data-theme="dark"] .career-card,
+html[data-theme="dark"] .comparison-card,
+html[data-theme="dark"] .comparison-controls,
+html[data-theme="dark"] .game-dialog {
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .welcome-banner {
+    border-color: var(--border);
+    background: linear-gradient(120deg, #4C1D95, #1F2937);
+}
+
+html[data-theme="dark"] .salary-tiers,
+html[data-theme="dark"] .scene-card,
+html[data-theme="dark"] .match-state,
+html[data-theme="dark"] .progress-track,
+html[data-theme="dark"] .dialog-close,
+html[data-theme="dark"] .avatar,
+html[data-theme="dark"] .match-rank,
+html[data-theme="dark"] .home-match-rank,
+html[data-theme="dark"] .loading-symbol {
+    background: var(--primary-soft);
+}
+
+html[data-theme="dark"] .recommendation,
+html[data-theme="dark"] .nav-link:hover,
+html[data-theme="dark"] .nav-link.active,
+html[data-theme="dark"] .toggle-password:hover,
+html[data-theme="dark"] .game-choice:hover {
+    background: var(--primary-soft);
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] select {
+    background: var(--card);
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] select:focus {
+    background: var(--card);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(167,139,250,.16);
+}
+
+html[data-theme="dark"] .toast {
+    border-color: var(--border);
+    background: var(--card);
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .toast.error {
+    border-color: var(--error);
+    background: #7F1D1D;
+    color: #FEF2F2;
+}
+
+html[data-theme="dark"] .data-note {
+    border-color: #78350F;
+    background: #451A03;
+    color: #FDE68A;
+}
+
+html[data-theme="dark"] .story p,
+html[data-theme="dark"] .path,
+html[data-theme="dark"] .subtitle,
+html[data-theme="dark"] .signin,
+html[data-theme="dark"] .auth-divider,
+html[data-theme="dark"] .topbar-greeting,
+html[data-theme="dark"] .nav-link,
+html[data-theme="dark"] .sidebar-profile small,
+html[data-theme="dark"] .page-intro,
+html[data-theme="dark"] .welcome-banner > div:first-child > p:not(.eyebrow),
+html[data-theme="dark"] .home-profile-identity p,
+html[data-theme="dark"] .home-profile-identity small,
+html[data-theme="dark"] .home-match-summary,
+html[data-theme="dark"] .home-top-careers .home-match-empty,
+html[data-theme="dark"] .matches-header > div:first-child > p:last-child,
+html[data-theme="dark"] .match-card > p,
+html[data-theme="dark"] .match-state,
+html[data-theme="dark"] .feature-copy small,
+html[data-theme="dark"] .career-card > p,
+html[data-theme="dark"] .comparison-card > p,
+html[data-theme="dark"] .salary-tiers small,
+html[data-theme="dark"] .career-path small,
+html[data-theme="dark"] .career-path p,
+html[data-theme="dark"] .comparison-detail small,
+html[data-theme="dark"] .versus,
+html[data-theme="dark"] .comparison-placeholder,
+html[data-theme="dark"] .game-progress,
+html[data-theme="dark"] .scene-card p {
+    color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .home-profile-identity strong,
+html[data-theme="dark"] .home-top-careers-heading,
+html[data-theme="dark"] .home-match-career,
+html[data-theme="dark"] .match-card h3,
+html[data-theme="dark"] .feature-copy strong,
+html[data-theme="dark"] .profile-form label,
+html[data-theme="dark"] .explorer-controls label,
+html[data-theme="dark"] .comparison-controls label,
+html[data-theme="dark"] .career-card h2,
+html[data-theme="dark"] .comparison-card h2,
+html[data-theme="dark"] .career-skills strong,
+html[data-theme="dark"] .comparison-detail strong,
+html[data-theme="dark"] .comparison-placeholder strong,
+html[data-theme="dark"] .game-choice,
+html[data-theme="dark"] .dialog-close {
+    color: var(--text-primary);
 }

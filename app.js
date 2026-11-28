@@ -463,6 +463,36 @@ document.querySelectorAll("[data-language-selector]").forEach((selector) => {
     selector.addEventListener("change", () => applyLanguage(selector.value));
 });
 
+function applyTheme(theme) {
+    const normalizedTheme = theme === "dark" ? "dark" : "light";
+    document.documentElement.dataset.theme = normalizedTheme;
+    localStorage.setItem("careerverse-theme", normalizedTheme);
+
+    const toggle = document.querySelector("#theme-toggle");
+    const icon = toggle?.querySelector(".theme-toggle-icon");
+    if (toggle && icon) {
+        const isDark = normalizedTheme === "dark";
+        icon.textContent = isDark ? "☀" : "☾";
+        toggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+        toggle.title = isDark ? "Light mode" : "Dark mode";
+    }
+
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    themeMeta?.setAttribute("content", normalizedTheme === "dark" ? "#0B0B16" : "#FFFFFF");
+}
+
+const savedTheme = localStorage.getItem("careerverse-theme");
+const initialTheme = savedTheme === "dark"
+    ? "dark"
+    : savedTheme === "light"
+        ? "light"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+applyTheme(initialTheme);
+
+document.querySelector("#theme-toggle")?.addEventListener("click", () => {
+    applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+});
+
 function showToast(message, isError = false) {
     toast.textContent = message;
     toast.classList.toggle("error", isError);
