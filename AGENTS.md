@@ -15,7 +15,7 @@
 - **Core Pages & Flows:**
   - Sign In / Log In with 16-types MBTI selector/link -> Dashboard (`UserName Profile`, `MBTI`, `Your Top Match`, `Career Compatibility`, `Start Simulation`).
   - Career Explorer (job/region filter, salary sorting, High School -> University -> Workspace roadmap, Entry/Mid-level/Senior-Lead salary cards).
-  - Day-in-the-Life Simulator (job dropdown, 5–7 scenes, 2–3 choices per scene).
+  - Day-in-the-Life Simulator (job dropdown, will integrate Roblox like game interface later, ignore for now).
   - Career Comparison (`CA` vs `CB`, `Compare` action, `AI Recommendation`, and `CA1` / `CA2` cards).
   - Ask for Country
   - Add AI Integration in Comparison Tab for Comparing two careers for same country or different countries
