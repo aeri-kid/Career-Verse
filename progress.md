@@ -9,6 +9,7 @@
 - [ ] Phase 5: Demo Prep (10%)
 
 ## Completed
+- [x] Updated the CareerVerse light and dark colour schemes to the purple design tokens in AGENTS.md
 - [x] Defined CareerVerse concept, tagline, and $0–$20 hackathon budget strategy
 - [x] Created wireframes for Sign In/Log In, Dashboard, Day-in-the-Life Simulator, Career Explorer/Pathway/Salary, and Career Comparison
 - [x] Updated spec so salary tiers, region filter, and salary sorting live directly inside Career Explorer

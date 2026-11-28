@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f7f5ef">
+    <meta name="theme-color" content="#FFFFFF">
     <title>CareerVerse | Discover your future</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,10 +39,10 @@
             <div class="brand">
                 <span class="brand-mark" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M12 21C12 14 16 9 21 6" stroke="#516F42" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M12 21C12 13 8 8 3 6" stroke="#516F42" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M12 21V3" stroke="#516F42" stroke-width="1.8" stroke-linecap="round"/>
-                        <circle cx="12" cy="3" r="2" fill="#516F42"/>
+                        <path d="M12 21C12 14 16 9 21 6" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M12 21C12 13 8 8 3 6" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M12 21V3" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round"/>
+                        <circle cx="12" cy="3" r="2" fill="#7C3AED"/>
                     </svg>
                 </span>
                 CareerVerse
@@ -194,13 +194,14 @@
                 <button class="nav-link" type="button" data-page-link="explorer" data-i18n="Career Explorer"><span aria-hidden="true">⌕</span> Career Explorer</button>
                 <button class="nav-link" type="button" data-open-game data-i18n="Day-in-the-Life"><span aria-hidden="true">◷</span> Day-in-the-Life</button>
                 <button class="nav-link" type="button" data-page-link="comparison" data-i18n="Comparison"><span aria-hidden="true">⇄</span> Comparison</button>
-                <button class="nav-link" type="button" data-page-link="profile" data-i18n="Profile"><span aria-hidden="true">◉</span> Profile</button>
+                <button class="nav-link" type="button" data-page-link="profile" data-i18n="Settings & MBTI"><span aria-hidden="true">⚙</span> Settings &amp; MBTI</button>
             </nav>
             <div class="sidebar-bottom">
                 <div class="sidebar-profile">
                     <span class="avatar" id="user-avatar">U</span>
                     <span><strong id="sidebar-name">Your profile</strong><small id="sidebar-mbti">Career explorer</small></span>
                 </div>
+                <button class="nav-link" type="button" id="help-button" data-i18n="Help"><span aria-hidden="true">?</span> Help</button>
                 <button class="nav-link logout-link" type="button" id="logout-button" data-i18n="Log Out"><span aria-hidden="true">↪</span> Log Out</button>
             </div>
         </aside>
@@ -214,6 +215,9 @@
                         <option value="en">EN</option>
                         <option value="my">မြန်မာ</option>
                     </select>
+                    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Dark mode">
+                        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+                    </button>
                     <button class="profile-shortcut" type="button" data-page-link="profile" aria-label="Go to profile" data-i18n-aria="Go to profile"><span class="avatar small" id="topbar-avatar">U</span></button>
                 </div>
             </header>
@@ -293,6 +297,7 @@
                     <label class="region-control" data-i18n="Region">Region <select id="salary-region" aria-label="Salary region" data-i18n-aria="Salary region"><option value="United States">United States · USD</option><option value="Canada">Canada · CAD</option></select></label>
                     <label class="sort-control" data-i18n="Sort by">Sort by <select id="salary-sort" aria-label="Sort careers" data-i18n-aria="Sort careers"><option value="match" data-i18n="Best match">Best match</option><option value="salary" data-i18n="Highest senior salary">Highest senior salary</option><option value="name" data-i18n="Career name">Career name</option></select></label>
                 </div>
+                <div class="mmk-rate" id="mmk-rate" aria-live="polite"></div>
                 <p class="data-note" id="career-data-note" hidden></p>
                 <div class="career-grid" id="career-grid"></div>
                 <p class="empty-state" id="career-empty" hidden data-i18n="No careers match that search. Try another keyword.">No careers match that search. Try another keyword.</p>
@@ -303,8 +308,10 @@
                 <p class="page-intro" data-i18n="Compare two paths and see how their work, learning, and salary can differ.">Compare two paths and see how their work, learning, and salary can differ.</p>
                 <div class="comparison-controls">
                     <label data-i18n="Career one">Career one<select id="compare-one"></select></label>
+                    <label data-i18n="Country">Country<select id="compare-country-one" aria-label="Career one country"></select></label>
                     <span class="versus">VS</span>
                     <label data-i18n="Career two">Career two<select id="compare-two"></select></label>
+                    <label data-i18n="Country">Country<select id="compare-country-two" aria-label="Career two country"></select></label>
                     <button class="primary-action" id="compare-button" type="button" data-i18n="Compare careers">Compare careers <span aria-hidden="true">→</span></button>
                 </div>
                 <div class="comparison-results" id="comparison-results" aria-live="polite">
